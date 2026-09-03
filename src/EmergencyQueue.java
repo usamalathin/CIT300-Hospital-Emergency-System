@@ -17,4 +17,20 @@ public class EmergencyQueue {
             patient.patientName + " added to emergency queue."
         );
     }
+
+    public void dequeuePatient() {
+
+        if (emergencyQueue.isEmpty()) {
+
+            System.out.println("Emergency queue is empty. - EmergencyQueue.java:25");
+            return;
+        }
+
+        Patient treatedPatient = emergencyQueue.poll();
+
+        System.out.println(
+            treatedPatient.patientName +
+            " removed from emergency queue."
+        );
+    }
 }
