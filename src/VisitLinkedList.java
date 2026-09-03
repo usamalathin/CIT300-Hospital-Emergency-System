@@ -56,4 +56,29 @@ public class VisitLinkedList {
 
         temp.next = newNode;
     }
+
+    public void searchVisit(int visitId) {
+
+        VisitNode temp = head;
+
+        while (temp != null) {
+
+            if (temp.visitId == visitId) {
+
+                System.out.println("Visit Found - VisitLinkedList.java:68");
+                System.out.println("Visit ID: - VisitLinkedList.java:69" + temp.visitId);
+                System.out.println("Date: - VisitLinkedList.java:70" + temp.visitDate);
+                System.out.println("Doctor: - VisitLinkedList.java:71" + temp.doctorName);
+                System.out.println("Diagnosis: - VisitLinkedList.java:72" + temp.diagnosis);
+                System.out.println("Treatment: - VisitLinkedList.java:73" + temp.treatment);
+
+                return;
+            }
+
+            temp = temp.next;
+        }
+
+        System.out.println("Visit not found. - VisitLinkedList.java:81");
+    }
+    
 }
