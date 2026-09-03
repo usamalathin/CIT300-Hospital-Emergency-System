@@ -34,4 +34,23 @@ public class TreatmentStack {
             " treatment record removed from stack."
         );
     }
+
+    public void displayStack() {
+
+        if (treatmentStack.isEmpty()) {
+
+            System.out.println("Treatment stack is empty. - TreatmentStack.java:42");
+            return;
+        }
+
+        System.out.println("Treatment Stack: - TreatmentStack.java:46");
+
+        for (Patient patient : treatmentStack) {
+
+            System.out.println(
+                patient.patientId + " - " +
+                patient.patientName
+            );
+        }
+    }
 }
