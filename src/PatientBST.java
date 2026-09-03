@@ -61,4 +61,49 @@ public class PatientBST {
         return searchRecursive(root.right, patientId);
     }
 
+    public void delete(int patientId) {
+        root = deleteRecursive(root, patientId);
+    }
+
+    private Node deleteRecursive(Node root, int patientId) {
+
+        if (root == null) {
+            return null;
+        }
+
+        if (patientId < root.patient.patientId) {
+            root.left = deleteRecursive(root.left, patientId);
+        }
+
+        else if (patientId > root.patient.patientId) {
+            root.right = deleteRecursive(root.right, patientId);
+        }
+
+        else {
+
+            if (root.left == null) {
+                return root.right;
+            }
+
+            else if (root.right == null) {
+                return root.left;
+            }
+
+            root.patient = findMin(root.right);
+
+            root.right = deleteRecursive(root.right, root.patient.patientId);
+        }
+
+        return root;
+    }
+
+    private Patient findMin(Node root) {
+
+        while (root.left != null) {
+            root = root.left;
+        }
+
+        return root.patient;
+    }
+
 }
