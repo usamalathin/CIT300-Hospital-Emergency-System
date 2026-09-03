@@ -27,4 +27,33 @@ public class VisitLinkedList {
     }
 
     VisitNode head = null;
+
+    public void addVisit(
+            int visitId,
+            String visitDate,
+            String doctorName,
+            String diagnosis,
+            String treatment) {
+
+        VisitNode newNode = new VisitNode(
+                visitId,
+                visitDate,
+                doctorName,
+                diagnosis,
+                treatment);
+
+        if (head == null) {
+
+            head = newNode;
+            return;
+        }
+
+        VisitNode temp = head;
+
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+
+        temp.next = newNode;
+    }
 }
