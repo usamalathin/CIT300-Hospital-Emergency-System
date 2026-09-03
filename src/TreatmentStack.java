@@ -8,4 +8,14 @@ public class TreatmentStack {
 
         treatmentStack = new Stack<>();
     }
+
+    public void pushTreatment(Patient patient) {
+
+        treatmentStack.push(patient);
+
+        System.out.println(
+            patient.patientName +
+            " treatment record added to stack."
+        );
+    }
 }
