@@ -80,5 +80,40 @@ public class VisitLinkedList {
 
         System.out.println("Visit not found. - VisitLinkedList.java:81");
     }
-    
+
+    public void removeVisit(int visitId) {
+
+        if (head == null) {
+
+            System.out.println("Visit list is empty. - VisitLinkedList.java:88");
+            return;
+        }
+
+        if (head.visitId == visitId) {
+
+            head = head.next;
+
+            System.out.println("Visit removed successfully. - VisitLinkedList.java:96");
+            return;
+        }
+
+        VisitNode temp = head;
+
+        while (temp.next != null &&
+            temp.next.visitId != visitId) {
+
+            temp = temp.next;
+        }
+
+        if (temp.next == null) {
+
+            System.out.println("Visit not found. - VisitLinkedList.java:110");
+            return;
+        }
+
+        temp.next = temp.next.next;
+
+        System.out.println("Visit removed successfully. - VisitLinkedList.java:116");
+    }
+
 }
