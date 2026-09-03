@@ -106,4 +106,20 @@ public class PatientBST {
         return root.patient;
     }
 
+    public void displayPatients() {
+        inorderTraversal(root);
+    }
+
+    private void inorderTraversal(Node root) {
+
+        if (root != null) {
+
+            inorderTraversal(root.left);
+
+            root.patient.displayPatient();
+
+            inorderTraversal(root.right);
+        }
+    }
+
 }
