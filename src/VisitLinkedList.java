@@ -116,4 +116,29 @@ public class VisitLinkedList {
         System.out.println("Visit removed successfully. - VisitLinkedList.java:116");
     }
 
+    public void displayVisits() {
+
+        if (head == null) {
+
+            System.out.println("No visit history available. - VisitLinkedList.java:123");
+            return;
+        }
+
+        VisitNode temp = head;
+
+        System.out.println("Visit History: - VisitLinkedList.java:129");
+
+        while (temp != null) {
+
+            System.out.println("Visit ID: - VisitLinkedList.java:133" + temp.visitId);
+            System.out.println("Date: - VisitLinkedList.java:134" + temp.visitDate);
+            System.out.println("Doctor: - VisitLinkedList.java:135" + temp.doctorName);
+            System.out.println("Diagnosis: - VisitLinkedList.java:136" + temp.diagnosis);
+            System.out.println("Treatment: - VisitLinkedList.java:137" + temp.treatment);
+            System.out.println("");
+
+            temp = temp.next;
+        }
+    }
+
 }
